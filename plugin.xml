@@ -35,6 +35,13 @@
           <action android:name="com.android.vending.INSTALL_REFERRER" />
         </intent-filter>
       </receiver>
+      <receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true">
+        <intent-filter>
+            <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+        </intent-filter>
+      </receiver>
+      <service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false"/>
     </config-file>
     <source-file src="src/android/CPGoogleAnalytics.java" target-dir="src/com/appfeel/cordova/analytics" />
     <framework src="com.google.android.gms:play-services-analytics:8.4.0+" />
